@@ -42,7 +42,7 @@ public class InstructionReSortDemo {
  * @description:另一个指令重排序案例 循环次数足够多，可能会发生重排序现象，如果未发生重排序的情况下，肯定先给a,b赋值，随后x,y 不为0
  **/
 class ResortSeqDemo {
-    static int x, y, a, b;
+    volatile static int x, y, a, b;
 
     public static void main(String[] args) {
         for (int i = 0; i < 100000; i++) {
