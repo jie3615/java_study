@@ -8,8 +8,8 @@ import org.junit.Test;
  * @description:
  */
 public class ClassLoaderTest1 {
-    public static void main(String[] args){
-
+    @Test
+    public void test001() {
         /**
          * 子类主动get父类静态属性
          */
@@ -38,16 +38,15 @@ public class ClassLoaderTest1 {
     }
 
     @Test
-    public void test001() {
+    public void test002() {
         System.out.println(MyChild1.str2);
         /**
-         * 结果
+         * 结果：
          * MyParent1 静态代码块执行
-         MyChild1 静态代码块执行
-         hello world child
+           MyChild1 静态代码块执行
+           hello world child
          #############
          分析:子类定义的静态变量，子类的静态代码块肯定会执行。子类进行初始化，在子类初始化之前首先对所有父类进行初始化。
-
          */
     }
 
