@@ -9,7 +9,7 @@ import java.util.Random;
  * @date: 2019/9/11
  * @description:
  */
-public class ClassLoderTest7 {
+public class ClassLoaderTest7 {
 
     public static void main(String[] args){
 
