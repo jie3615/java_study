@@ -25,6 +25,7 @@ public class LoaderTest3 {
 
     @Test
     public void test001() {
+        // 上下文类加载器给i他ada
         System.out.println(Thread.currentThread().getContextClassLoader());
     }
 }
