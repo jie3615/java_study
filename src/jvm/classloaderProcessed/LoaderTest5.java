@@ -68,11 +68,46 @@ public class LoaderTest5 extends ClassLoader {
         myClassLoader.setPath("E:\\");
 
 
-        Class<?> clazz = myClassLoader.loadClass("beans.User");
+       /* Class<?> clazz = myClassLoader.loadClass("beans.User");
 
         System.out.println("class :"+clazz.hashCode());
         // 需要有无参构造器
         Object object = clazz.newInstance();
-        System.out.println(object);
+        System.out.println(object.getClass().getClassLoader());
+        System.out.println(object);*/
+
+        System.out.println("###############################");
+        LoaderTest5 myClassLoader2 = new LoaderTest5(myClassLoader,"myClassLoader2"); // 传入父classLoader 会由父类加载
+        myClassLoader2.setPath("E:\\");
+
+        Class<?> clazz2 = myClassLoader2.loadClass("beans.User");
+        System.out.println("class :"+clazz2.hashCode());
+        // 需要有无参构造器
+        Object object2 = clazz2.newInstance();
+        System.out.println(object2.getClass().getClassLoader());
+        System.out.println(object2);
+
+        System.out.println("#########################");
+        LoaderTest5 myClassLoader3 = new LoaderTest5( myClassLoader2,"myClassLoader3"); // 传入父classLoader 会由父类加载
+        myClassLoader3.setPath("E:\\");
+
+        Class<?> clazz3 = myClassLoader3.loadClass("beans.User");
+
+        System.out.println("class :"+clazz3.hashCode());
+        // 需要有无参构造器
+        Object object3 = clazz3.newInstance();
+        System.out.println(object3.getClass().getClassLoader());
+        System.out.println(object3);
+        /**
+         * 结果：###############################
+         findClass invoked beans.User
+         this.classLoaderName : myClassLoader
+         class :1173230247
+         jvm.classloaderProcessed.LoaderTest5@6d6f6e28
+         User{name='null', age=0}
+
+         Process finished with exit code 0
+         */
     }
+
     }
