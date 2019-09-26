@@ -1,5 +1,6 @@
 package jvm.classloaderProcessed;
 
+import com.sun.crypto.provider.AESKeyGenerator;
 import org.junit.Test;
 
 /**
@@ -30,6 +31,18 @@ public class LoaderTest8 {
          *  执行结果：null
                       2027961269
            确实是由根类加载器加载的。。。
+         */
+    }
+
+    @Test
+    public void test002() {
+
+        AESKeyGenerator aesKeyGenerator = new AESKeyGenerator();
+        System.out.println(aesKeyGenerator.getClass().getClassLoader());
+
+        /**
+         * 测试扩展类加载器
+         * 结果：sun.misc.Launcher$ExtClassLoader@452b3a41
          */
     }
 }
