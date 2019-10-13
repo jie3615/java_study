@@ -8,6 +8,9 @@ public class ByteCodeTest2 {
     String str = "welcome";
     private int x = 5;
     public static Integer in = 10;
+    static {
+         String s = "a";
+    }
     public static void main(String[] args){
         ByteCodeTest2 byteCodeTest2 = new ByteCodeTest2();
         byteCodeTest2.setX(8);
