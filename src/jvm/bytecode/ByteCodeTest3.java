@@ -96,6 +96,7 @@ public class ByteCodeTest3 {
      54       4     1     e   Ljava/io/IOException;
      0      93     0  this   Ljvm/bytecode/ByteCodeTest3;
 
+     solt :是可以复用的，
      */
 
     /**
