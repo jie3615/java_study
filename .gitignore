@@ -30,3 +30,7 @@ dependency-reduced-pom.xml
 *.iws
 *.idea
 
+
+java_pid33124.hprof.analysis/
+
+*.hprof
